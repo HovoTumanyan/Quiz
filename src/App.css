@@ -8,7 +8,7 @@
 }
 
 body {
-  background-color: #333 ; 
+  background-color: #333;
 }
 
 .prog {
@@ -137,9 +137,8 @@ body {
   border: 2px solid #ccc;
   border-radius: 10px;
   box-shadow: 0 0 20px rgb(255, 0, 242);
-  transition: all .5s;
+  transition: all 0.5s;
 }
-
 
 .answer {
   color: #fff;
@@ -187,8 +186,7 @@ p {
   border: 2px solid #ccc;
   border-radius: 10px;
   box-shadow: 0 0 20px rgb(255, 0, 242);
-  transition: all .5s;
-
+  transition: all 0.5s;
 }
 
 .selectCategory h1 {
@@ -196,8 +194,7 @@ p {
   text-align: center;
   color: #333;
   font-family: Georgia, 'Times New Roman', Times, serif;
-  transition: all .5s;
-
+  transition: all 0.5s;
 }
 
 .uniqButton {
@@ -236,7 +233,6 @@ p {
   gap: 5px;
   justify-content: center;
   align-items: center;
-  
 }
 
 .sresult {
@@ -251,14 +247,13 @@ p {
   width: 100%;
   max-width: 600px;
   max-height: 600px;
-  transition: all .5s;
+  transition: all 0.5s;
 }
 
 .question {
   font-weight: bold;
   margin-bottom: 10px;
-  transition: all .2s;
-
+  transition: all 0.2s;
 }
 
 .answers ul {
@@ -291,23 +286,18 @@ p {
 
 .answer-item.restDefault {
   background-color: #888888;
-  transition: all .5s;
+  transition: all 0.5s;
 }
 
 .ant-switch:focus {
- outline: none;
+  outline: none;
 }
 
-
-.menu{
-  /* width: 90%; */
-  /* background-color: rgb(255, 0, 255); */
+.menu {
   border-radius: 10px;
   display: flex;
   justify-content: end;
   align-items: center;
-  /* align-items: center; */
-
 }
 
 .ant-switch {
@@ -316,16 +306,11 @@ p {
 
 .ant-switch-checked {
   background-color: rgb(24, 24, 24) !important;
-  
 }
 
-.ant-switch-handle{
+.ant-switch-handle {
   visibility: hidden !important;
 }
-.ant-switch-inner{
+.ant-switch-inner {
   padding: 0 !important;
-}
-
-.dd{
-  line-gap-override: r;
 }
