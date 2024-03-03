@@ -1,0 +1,23 @@
+ .dark {
+  background-color: black;
+  color: #fff;
+}
+
+.dark .uniqButton:hover {
+  background-color: inherit;
+  color: #fff;
+  text-shadow: unset;
+}
+
+.dark .answer:hover {
+  background-color: inherit;
+  color: #fff;
+}
+
+ .dark h1, .dark .steps{
+  color: rgb(255, 0, 255);
+}
+
+.dark .restDefault {
+  background-color: #3a3030;
+}
