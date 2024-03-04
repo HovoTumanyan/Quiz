@@ -15,9 +15,11 @@
 }
 
  .dark h1, .dark .steps{
-  color: rgb(255, 0, 255);
+  color: rgb(255, 255, 255);
 }
 
 .dark .restDefault {
   background-color: #3a3030;
 }
+
+

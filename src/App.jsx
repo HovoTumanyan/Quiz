@@ -2,7 +2,6 @@ import { useEffect, useState } from 'react';
 import { Modal, Button, DarkMode, ProgressBar, AnswerBox, SelectCategory, Result } from './import';
 import axios from 'axios';
 
-
 import './dark-mode.css';
 
 import './App.css';
@@ -54,56 +53,59 @@ function App() {
     setCurrentIndex(0);
     setCorrectAnswerCount(0);
   };
- 
+
   return (
-    <div >
-      <div className='menu'>
-      <DarkMode setSwitchMode={setSwitchMode} />
-      
+    <div>
+      <div className="menu">
+        <DarkMode setSwitchMode={setSwitchMode} />
       </div>
-      
-      {showResult ? (
-        
-        <Result filteredQuestions={filteredQuestions} isCorrect={isCorrect} switchMode={switchMode}/>
-      ) : (
-        <>
-          {correctAnswerCount === -1 ? (
-            <div className={`selectCategory ${switchMode ? 'dark' : ''}`}>
-              <h1>Bыберите категорию для начала Quiz</h1>
-              <SelectCategory>
-                <Button uniqueCategories={uniqueCategories} categoryFilter={categoryFilter} />
-              </SelectCategory>
-            </div>
-          ) : (
-            <>
-              {currentIndex === filteredQuestions.length ? (
-                <Modal
-                  setCorrectAnswerCount={setCorrectAnswerCount}
-                  filteredQuestions={filteredQuestions}
-                  setShowResult={setShowResult}
-                  isCorrect={isCorrect}
-                  setIsCorrect={setIsCorrect}
-                  progressBar={progressBar}
-                />
-              ) : (
-                <div
-                  className={`bigQuestionDiv container ${switchMode ? 'dark' : 'light'}`}
-                  style={{ maxWidth: '600px' }}
-                >
-                  <h3>{filteredQuestions[currentIndex].question}</h3>
-                  <pre className="steps">
-                    {filteredQuestions.length}/{currentIndex + 1}
-                  </pre>
-                  <ProgressBar percentStyle={{ width: `${progressBar}%` }} />
-                  <div className="filteredQuestionsDiv container" style={{ maxWidth: '600px' }}>
-                    <AnswerBox answers={filteredQuestions[currentIndex].answer} step={step} />
+      <div className="main">
+        {showResult ? (
+          <Result
+            filteredQuestions={filteredQuestions}
+            isCorrect={isCorrect}
+            switchMode={switchMode}
+          />
+        ) : (
+          <>
+            {correctAnswerCount === -1 ? (
+              <div className={`selectCategory ${switchMode ? 'dark' : ''}`}>
+                <h1>Bыберите категорию для начала Quiz</h1>
+                <SelectCategory>
+                  <Button uniqueCategories={uniqueCategories} categoryFilter={categoryFilter} />
+                </SelectCategory>
+              </div>
+            ) : (
+              <>
+                {currentIndex === filteredQuestions.length ? (
+                  <Modal
+                    setCorrectAnswerCount={setCorrectAnswerCount}
+                    filteredQuestions={filteredQuestions}
+                    setShowResult={setShowResult}
+                    isCorrect={isCorrect}
+                    setIsCorrect={setIsCorrect}
+                    progressBar={progressBar}
+                  />
+                ) : (
+                  <div
+                    className={`bigQuestionDiv container ${switchMode ? 'dark' : 'light'}`}
+                    style={{ maxWidth: '600px' }}
+                  >
+                    <h3>{filteredQuestions[currentIndex].question}</h3>
+                    <pre className="steps">
+                      {filteredQuestions.length}/{currentIndex + 1}
+                    </pre>
+                    <ProgressBar percentStyle={{ width: `${progressBar}%` }} />
+                    <div className="filteredQuestionsDiv container" style={{ maxWidth: '600px' }}>
+                      <AnswerBox answers={filteredQuestions[currentIndex].answer} step={step} />
+                    </div>
                   </div>
-                </div>
-              )}
-            </>
-          )}
-        </>
-      )}
+                )}
+              </>
+            )}
+          </>
+        )}
+      </div>
     </div>
   );
 }

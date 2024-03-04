@@ -1,14 +1,16 @@
 #root {
   max-width: 1280px;
   margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
-  display: flex;
-  justify-content: center;
+  padding: 1rem;
 }
 
 body {
   background-color: #333;
+}
+.main {
+  text-align: center;
+  display: flex;
+  justify-content: center;
 }
 
 .prog {
@@ -228,7 +230,7 @@ p {
 
 .result {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   flex-wrap: wrap;
   gap: 5px;
   justify-content: center;
@@ -298,14 +300,17 @@ p {
   display: flex;
   justify-content: end;
   align-items: center;
+  width: 100%;
+  background-color: #777575;
+  height: 40px;
 }
 
 .ant-switch {
-  background-color: rgb(17, 17, 17) !important;
+  background-color: rgb(0, 0, 0) !important;
 }
 
 .ant-switch-checked {
-  background-color: rgb(24, 24, 24) !important;
+  background-color: #1a2327 !important;
 }
 
 .ant-switch-handle {

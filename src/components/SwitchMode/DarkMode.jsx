@@ -23,7 +23,7 @@ export default function switchMode({ setSwitchMode }) {
       >
         <Space direction="vertical">
           <Switch
-            checkedChildren={<FaSun style={{ color: 'yellow', fontSize: '17px' }} />}
+            checkedChildren={<FaSun style={{ color: 'yellow', fontSize: '17px'}} />}
             unCheckedChildren={<FaMoon style={{ color: 'yellow', fontSize: '17px' }} />}
             onChange={(checked) => setSwitchMode(checked)}
           />
