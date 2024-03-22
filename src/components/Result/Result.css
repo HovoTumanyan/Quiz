@@ -1,0 +1,33 @@
+.result {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    gap: 5px;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .sresult {
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size: 25px;
+    margin-bottom: 20px;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border: 2px solid #ccc;
+    border-radius: 10px;
+    box-shadow: 5px 10px 20px 20px rgba(186, 3, 241, 0.185);
+    width: 100%;
+    max-width: 600px;
+    transition: all 0.5s;
+  }
+
+  .question {
+    font-weight: bold;
+    margin-bottom: 10px;
+    transition: all 0.2s;
+  }
+  
+  .resultUl {
+    display: flex;
+    gap: 10px;
+  }

@@ -1,7 +1,7 @@
-import React from 'react';
-// import MyLoader from './sceleton/MyLoader';
+
 import Skeleton from 'react-loading-skeleton';
 import 'react-loading-skeleton/dist/skeleton.css';
+import './Button.css'
 
 export default function Button({ uniqueCategories, categoryFilter }) {
   return (

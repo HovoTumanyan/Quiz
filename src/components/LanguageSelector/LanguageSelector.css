@@ -1,0 +1,16 @@
+.language-selector {
+    display: flex;
+    gap: 10px;
+  }
+  
+  .language-button {
+    border: none;
+    background: none;
+    font-size: 16px;
+    cursor: pointer;
+    color: #800080;
+    border-radius: 100px;
+    background-color: transparent;
+    padding: 3px 12px;
+  }
+  

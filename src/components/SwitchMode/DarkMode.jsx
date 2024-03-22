@@ -1,7 +1,5 @@
-import { Switch, Space, ConfigProvider } from 'antd';
-import { FaMoon } from "react-icons/fa";
-
-import { FaSun } from 'react-icons/fa';
+import { Switch, Space, ConfigProvider} from 'antd';
+import { FaMoon, FaSun} from 'react-icons/fa';
 
 export default function switchMode({ setSwitchMode }) {
   return (
@@ -13,17 +11,14 @@ export default function switchMode({ setSwitchMode }) {
           },
           components: {
             Switch: {
-            colorPrimary: 'black',
-
-              handleBg: 'white',
+              colorPrimary: '#001529',
             },
           },
-
         }}
       >
         <Space direction="vertical">
           <Switch
-            checkedChildren={<FaSun style={{ color: 'yellow', fontSize: '17px'}} />}
+            checkedChildren={<FaSun style={{ color: 'yellow', fontSize: '17px' }} />}
             unCheckedChildren={<FaMoon style={{ color: 'yellow', fontSize: '17px' }} />}
             onChange={(checked) => setSwitchMode(checked)}
           />

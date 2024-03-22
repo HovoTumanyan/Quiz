@@ -1,0 +1,75 @@
+.modalBox {
+    width: 100%;
+    max-width: 600px;
+    height: 500px;
+    background-color: #f9f9f9;
+    border-radius: 10px;
+    box-shadow: 0 0 40px rgb(220, 4, 240);
+    background-image: url(../../assets//images/quiz-questions-answers-1669651278.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+  }
+  
+  .modalContent {
+    text-align: center;
+    background-color: rgba(92, 0, 128, 0.418);
+    box-shadow: inset 0 20px 20px rgb(255, 0, 255);
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-weight: 900 !important;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+  }
+
+  @keyframes borderAnimation {
+    0% {
+      box-shadow: 0 5px 10px rgba(236, 10, 236, 0.7);
+    }
+    25% {
+      box-shadow: 0 -10px 20px rgba(236, 10, 236, 0.7);
+    }
+    50% {
+      box-shadow: 0 10px 20px rgba(236, 10, 236, 0.7);
+    }
+    100% {
+      box-shadow: 0 10px 10px rgb(190, 6, 190);
+    }
+  }
+  
+  .modalContent button {
+    width: 20%;
+    margin-bottom: 10px;
+    background-color: transparent;
+    color: #ffffff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.5s;
+    font-size: 18px;
+    font-weight: 600;
+    font-size: 18px;
+    animation: borderAnimation 2s ease infinite;
+  }
+  
+  .modalContent button:hover {
+    background-color: #fff;
+    color: purple;
+    transition: 0.5s;
+    border-radius: 15px;
+    box-shadow: 0 0 20px rgb(255, 0, 242);
+    animation: none;
+  }
+  
+  .modalContent pre {
+    font-size: 30px;
+    color: #fff;
+  }
+
+  .modalBox h2 {
+    margin: 0;
+    color: #ffffff;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+  }

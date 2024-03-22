@@ -1,0 +1,28 @@
+.ant-switch:focus {
+    outline: none;
+  }
+  
+  .ant-switch-handle {
+    visibility: hidden !important;
+  }
+  
+  .ant-switch-inner {
+    padding: 0 !important;
+  }
+  
+  .ant-menu-dark .ant-menu-item-selected {
+    background-color: #800080 !important;
+    border-top-right-radius: 25px !important;
+    border-bottom-left-radius: 25px !important;
+  }
+  
+  .ant-menu-light .ant-menu-item-selected {
+    background-color: purple !important;
+    color: white !important;
+    border-top-right-radius: 25px !important;
+    border-bottom-left-radius: 25px !important;
+  }
+  
+  .ant-menu-item::after {
+    content: none !important;
+  }

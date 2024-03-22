@@ -1,0 +1,9 @@
+{
+    "category": "Select a category to start Quiz",
+    "answer": "You answered correctly",
+    "choose": "Choose language",
+    "translations": {
+      "Geography": "Geography",
+      "Programming": "Programming"
+    }
+  }

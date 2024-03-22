@@ -1,298 +1,40 @@
 #root {
-  max-width: 1280px;
   margin: 0 auto;
-  padding: 1rem;
+  padding: 5px;
 }
 
 body {
-  background-color: #333;
+  background-color: #001529;
 }
+
+.logo {
+  width: 40px;
+  transition: all 0.4s;
+  cursor: pointer;
+}
+
+
+@keyframes logo-animation {
+  0% {
+    transform: scale(1.1);
+    filter: drop-shadow(0 0 10px rgb(255, 255, 255)) drop-shadow(0 0 10px rgb(255, 255, 255));
+  }
+  
+  100% {
+    transform: scale(1);
+  }
+}
+
+.logo.anim {
+  animation: logo-animation 1.5s infinite;
+}
+
 .main {
   text-align: center;
   display: flex;
   justify-content: center;
-}
-
-.prog {
-  width: 100%;
-  height: 10px;
-  border-radius: 10px;
-  background-color: #50515346;
-}
-
-.percent {
-  width: 10%;
-  height: 10px;
-  border-radius: 10px;
-  text-align: left;
-  background-image: linear-gradient(
-    to left,
-    rgb(235, 120, 250) 10%,
-    rgb(235, 31, 235) 20%,
-    rgb(175, 3, 175) 65%
-  );
-  transition: 0.9s ease-in-out;
-}
-
-.steps {
-  width: 100%;
-  margin: 0em 0px;
-  text-align: right;
-  font-size: 17px;
-  color: #800080;
-  transition: 0.9s ease-out;
-}
-
-.modalBox {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: 50%;
-  max-width: 600px;
-  height: 500px;
-  background-color: #f9f9f9;
-  border-radius: 10px;
-  box-shadow: 0 0 40px rgb(220, 4, 240);
-  background-image: url(./assets/quiz-questions-answers-1669651278.jpg);
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: cover;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-end;
-}
-
-.modalContent {
-  text-align: center;
-  background-color: rgba(92, 0, 128, 0.418);
-  box-shadow: inset 0 20px 20px rgb(255, 0, 255);
-  font-family: Georgia, 'Times New Roman', Times, serif;
-  font-weight: 900 !important;
-  border-bottom-left-radius: 10px;
-  border-bottom-right-radius: 10px;
-}
-
-@keyframes borderAnimation {
-  0% {
-    box-shadow: 0 5px 10px rgba(236, 10, 236, 0.7);
-  }
-  25% {
-    box-shadow: 0 -10px 20px rgba(236, 10, 236, 0.7);
-  }
-  50% {
-    box-shadow: 0 10px 20px rgba(236, 10, 236, 0.7);
-  }
-  100% {
-    box-shadow: 0 10px 10px rgb(190, 6, 190);
-  }
-}
-
-.modalContent button {
-  width: 20%;
-  margin-bottom: 10px;
-  background-color: transparent;
-  color: #ffffff;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-  transition: 0.5s;
-  font-size: 18px;
-  font-weight: 600;
-  font-size: 18px;
-  animation: borderAnimation 2s ease infinite;
-}
-
-.modalContent button:hover {
-  background-color: #fff;
-  color: purple;
-  transition: 0.5s;
-  border-radius: 15px;
-  box-shadow: 0 0 20px rgb(255, 0, 242);
-  animation: none;
-}
-.modalContent pre {
-  font-size: 30px;
-  color: #fff;
-}
-.modalBox h2 {
-  margin: 0;
-  color: #ffffff;
-  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
-}
-
-.modalBut {
-  background-color: teal;
-}
-
-.bigQuestionDiv {
-  display: flex;
-  flex-direction: column;
-  flex-wrap: wrap;
-  justify-content: center;
-  padding: 10px;
-  max-height: 800px;
-  width: 100%;
-  max-width: 600px;
-  padding: 20px;
-  background-color: #f9f9f9;
-  border: 2px solid #ccc;
-  border-radius: 10px;
-  box-shadow: 0 0 20px rgb(255, 0, 242);
-  transition: all 0.5s;
-}
-
-.answer {
-  color: #fff;
-  border: none;
-  border-radius: 5px;
-  background-color: purple;
-  text-align: center;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 10px;
-  line-height: 25px;
-  transition: 0.3s;
-}
-
-.answer:hover {
-  background-color: #fff;
-  color: purple;
-  transition: 0.3s;
-  border-radius: 15px;
-  box-shadow: 0 0 20px rgb(255, 0, 242);
-}
-.answer:active {
-  background-color: rgb(0, 0, 0);
-}
-
-.answerBox {
-  margin-top: 10px;
-  gap: 10px;
-  cursor: pointer;
-}
-
-p {
-  margin: unset !important;
-}
-
-.uniqButton:active {
-  background-color: rgb(0, 0, 0) !important;
-}
-
-.selectCategory {
-  max-width: 600px;
-  padding: 20px;
-  background-color: #f9f9f9;
-  border: 2px solid #ccc;
-  border-radius: 10px;
-  box-shadow: 0 0 20px rgb(255, 0, 242);
-  transition: all 0.5s;
-}
-
-.selectCategory h1 {
-  margin-bottom: 40px;
-  text-align: center;
-  color: #333;
-  font-family: Georgia, 'Times New Roman', Times, serif;
-  transition: all 0.5s;
-}
-
-.uniqButton {
-  display: block;
-  width: 100%;
-  padding: 10px;
-  margin-bottom: 10px;
-  background-color: #800080;
-  color: #fff;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-  transition: 0.5s;
-}
-.uniqButtonSceleton {
-  padding: 10px;
-  margin-bottom: 10px;
-  border-radius: 5px;
-}
-
-.uniqButton:hover {
-  background-color: #fff;
-  color: purple;
-  transition: 0.2s;
-  border-radius: 15px;
-  box-shadow: 0 0 20px rgb(255, 0, 242);
-  outline: none;
-  transform: scale(1.03);
-  text-shadow: 2px 5px 5px rgb(247, 0, 255);
-}
-
-.result {
-  display: flex;
-  flex-direction: column;
-  flex-wrap: wrap;
-  gap: 5px;
-  justify-content: center;
-  align-items: center;
-}
-
-.sresult {
-  font-family: Georgia, 'Times New Roman', Times, serif;
-  font-size: 25px;
   margin-bottom: 20px;
-  padding: 20px;
-  background-color: #f9f9f9;
-  border: 2px solid #ccc;
-  border-radius: 10px;
-  box-shadow: 5px 10px 20px 20px rgba(186, 3, 241, 0.185);
-  width: 100%;
-  max-width: 600px;
-  max-height: 600px;
-  transition: all 0.5s;
-}
-
-.question {
-  font-weight: bold;
-  margin-bottom: 10px;
-  transition: all 0.2s;
-}
-
-.answers ul {
-  list-style-type: none;
-  padding: 0;
-}
-
-.answer-item {
-  margin-bottom: 5px;
-  color: #fff;
-  border: none;
-  border-radius: 5px;
-  background-color: purple;
-  text-align: center;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 10px;
-  line-height: 25px;
-  transition: 0.3s;
-}
-
-.answer-item.incorrect {
-  background-color: red;
-}
-
-.answer-item.correct {
-  background-color: rgb(128, 0, 128);
-}
-
-.answer-item.restDefault {
-  background-color: #888888;
-  transition: all 0.5s;
-}
-
-.ant-switch:focus {
-  outline: none;
+  margin-top: 25px;
 }
 
 .menu {
@@ -301,21 +43,16 @@ p {
   justify-content: end;
   align-items: center;
   width: 100%;
-  background-color: #777575;
+  background-color: transparent;
   height: 40px;
+  margin-top: 7px;
+  gap: 5px;
 }
 
-.ant-switch {
-  background-color: rgb(0, 0, 0) !important;
+p {
+  margin: unset !important;
 }
 
-.ant-switch-checked {
-  background-color: #1a2327 !important;
-}
 
-.ant-switch-handle {
-  visibility: hidden !important;
-}
-.ant-switch-inner {
-  padding: 0 !important;
-}
+
+

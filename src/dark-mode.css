@@ -1,6 +1,9 @@
- .dark {
-  background-color: black;
+.dark {
+  background-color: #001529;
   color: #fff;
+}
+.dark body {
+  background-color: #001529 !important;
 }
 
 .dark .uniqButton:hover {
@@ -8,18 +11,22 @@
   color: #fff;
   text-shadow: unset;
 }
-
-.dark .answer:hover {
-  background-color: inherit;
-  color: #fff;
+@media (hover: hover) {
+  .dark .answer:hover {
+    background-color: inherit;
+    color: #fff;
+  }
+  /* .dark .answer:focus {
+    background-color: inherit;
+    color: #fff;
+  } */
 }
 
- .dark h1, .dark .steps{
+.dark h1,
+.dark .steps {
   color: rgb(255, 255, 255);
 }
 
 .dark .restDefault {
   background-color: #3a3030;
 }
-
-
