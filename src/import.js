@@ -7,6 +7,7 @@ import Result from './components/Result/Result';
 import DarkMode from './components/SwitchMode/DarkMode';
 import Ant from './components/AntDesign/Ant';
 import LanguageSelector from './components/LanguageSelector/LanguageSelector';
+import LoadingAnimation from './components/LoadingAnimation/LoadingAnimation';
 
 export {
   Modal,
@@ -18,4 +19,5 @@ export {
   AnswerBox,
   SelectCategory,
   Result,
+  LoadingAnimation
 };

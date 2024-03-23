@@ -26,3 +26,7 @@
   .ant-menu-item::after {
     content: none !important;
   }
+
+  .ant-menu{
+    padding: 0 15px !important;
+  }

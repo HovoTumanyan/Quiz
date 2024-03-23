@@ -1,6 +1,6 @@
 #root {
   margin: 0 auto;
-  /* padding: 2px; */
+  padding: 5px;
 }
 
 body {
@@ -56,12 +56,13 @@ p {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100vh;
+  height: 98vh;
   overflow: hidden;
   /* background-color: #001529; */
 }
 .animationLoading {
   border-radius: 50%;
   background-color: #001529;
-  box-shadow: 0 0 30px rgb(162, 0, 255); /* Изменен цвет и прозрачность тени */
+  box-shadow: 0 0 30px rgb(162, 0, 255);
+  width: 400px;
 }

@@ -3,8 +3,7 @@ import { useTranslation } from 'react-i18next';
 import axios from 'axios';
 import logo from './assets/images/question.png';
 import clickSound from './assets/sounds/clicksound.mp3';
-import Lottie from 'react-lottie';
-import AnimationData from './assets/Animation - 1711143244476.json';
+
 // import { Player, Controls } from '@lottiefiles/react-lottie-player';
 
 import {
@@ -15,6 +14,7 @@ import {
   SelectCategory,
   Result,
   LanguageSelector,
+  LoadingAnimation
 } from './import';
 
 import './App.css';
@@ -33,13 +33,19 @@ export default function App() {
   const [categories, setCategories] = useState([]);
   const [locale, setLocale] = useState('ru');
   const [animated, setAnimated] = useState(true);
+  
   useEffect(() => {
-    setTimeout(() => {
-      setAnimated(false);
-    }, 1500);
-  });
-  console.log(animated);
+    const timer = setTimeout(() => {
+        setAnimated(false); 
+    }, 15000);
+    return () => {
+        clearTimeout(timer);
+    };
+}, []);
+
+
   useEffect(() => {
+    
     axios
       .get('https://65dcaae6e7edadead7ecaa67.mockapi.io/Quiz/v1/users')
       .then((res) => {
@@ -111,16 +117,15 @@ export default function App() {
     audio.play();
   };
 
+ 
   const { t, i18n } = useTranslation();
+  
+
 
   return (
     <>
       {animated ? (
-        <div className="centered-container">
-          <div className="animationLoading" style={{ width: '400px' }}>
-            <Lottie options={{ animationData: AnimationData }} />
-          </div>
-        </div>
+        <LoadingAnimation playSound={playSound} animated={animated} switchMode={switchMode}/>
       ) : (
         <>
           <div className="menu">
