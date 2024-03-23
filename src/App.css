@@ -1,6 +1,6 @@
 #root {
   margin: 0 auto;
-  padding: 5px;
+  /* padding: 2px; */
 }
 
 body {
@@ -13,13 +13,12 @@ body {
   cursor: pointer;
 }
 
-
 @keyframes logo-animation {
   0% {
     transform: scale(1.1);
     filter: drop-shadow(0 0 10px rgb(255, 255, 255)) drop-shadow(0 0 10px rgb(255, 255, 255));
   }
-  
+
   100% {
     transform: scale(1);
   }
@@ -53,6 +52,16 @@ p {
   margin: unset !important;
 }
 
-
-
-
+.centered-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  overflow: hidden;
+  /* background-color: #001529; */
+}
+.animationLoading {
+  border-radius: 50%;
+  background-color: #001529;
+  box-shadow: 0 0 30px rgb(162, 0, 255); /* Изменен цвет и прозрачность тени */
+}

@@ -3,6 +3,9 @@ import { useTranslation } from 'react-i18next';
 import axios from 'axios';
 import logo from './assets/images/question.png';
 import clickSound from './assets/sounds/clicksound.mp3';
+import Lottie from 'react-lottie';
+import AnimationData from './assets/Animation - 1711143244476.json';
+// import { Player, Controls } from '@lottiefiles/react-lottie-player';
 
 import {
   Modal,
@@ -29,7 +32,13 @@ export default function App() {
   const [glob, setGlob] = useState('Programming');
   const [categories, setCategories] = useState([]);
   const [locale, setLocale] = useState('ru');
-
+  const [animated, setAnimated] = useState(true);
+  useEffect(() => {
+    setTimeout(() => {
+      setAnimated(false);
+    }, 1500);
+  });
+  console.log(animated);
   useEffect(() => {
     axios
       .get('https://65dcaae6e7edadead7ecaa67.mockapi.io/Quiz/v1/users')
@@ -59,7 +68,10 @@ export default function App() {
   useEffect(() => {
     document.body.style.backgroundColor = switchMode ? '#001529' : 'white';
   }, [switchMode]);
-
+  useEffect(() => {
+    
+    document.body.style.backgroundColor = animated ? '#001529' : 'white';
+  }, [animated]);
   const progressBar = Math.floor(((currentIndex + 1) / filteredQuestions.length) * 100);
 
   const step = (index) => {
@@ -103,81 +115,91 @@ export default function App() {
 
   return (
     <>
-      <div className="menu">
+      {animated ? (
+        <div className="centered-container">
+          <div className="animationLoading" style={{ width: '400px' }}>
+            <Lottie options={{ animationData: AnimationData }} />
+          </div>
+        </div>
+      ) : (
         <>
-          <img
-            src={logo}
-            className={`logo ${showResult ? 'anim' : ''}`}
-            title="Click to reset"
-            onClick={handleReset}
-          />
-        </>
+          <div className="menu">
+            <>
+              <img
+                src={logo}
+                className={`logo ${showResult ? 'anim' : ''}`}
+                title="Click to reset"
+                onClick={handleReset}
+              />
+            </>
 
-        <Ant
-          switchMode={switchMode}
-          categories={categories}
-          setGlob={setGlob}
-          setCategories={setCategories}
-          handleReset={handleReset}
-          t={t}
-        />
+            <Ant
+              switchMode={switchMode}
+              categories={categories}
+              setGlob={setGlob}
+              setCategories={setCategories}
+              handleReset={handleReset}
+              t={t}
+            />
 
-        <LanguageSelector
-          setCorrectAnswerCount={setCorrectAnswerCount}
-          setIsCorrect={setIsCorrect}
-          setLocale={setLocale}
-          locale={locale}
-          t={t}
-          i18n={i18n}
-          switchMode={switchMode}
-          setUniqueCategories={setUniqueCategories}
-        />
+            <LanguageSelector
+              setCorrectAnswerCount={setCorrectAnswerCount}
+              setIsCorrect={setIsCorrect}
+              setLocale={setLocale}
+              locale={locale}
+              t={t}
+              i18n={i18n}
+              switchMode={switchMode}
+              setUniqueCategories={setUniqueCategories}
+            />
 
-        <DarkMode setSwitchMode={setSwitchMode} />
-      </div>
+            <DarkMode setSwitchMode={setSwitchMode} />
+          </div>
 
-      <div className="main">
-        {showResult ? (
-          <Result
-            filteredQuestions={filteredQuestions}
-            isCorrect={isCorrect}
-            switchMode={switchMode}
-          />
-        ) : (
-          <>
-            {correctAnswerCount === -1 ? (
-              <SelectCategory
+          <div className="main">
+            {showResult ? (
+              <Result
+                filteredQuestions={filteredQuestions}
+                isCorrect={isCorrect}
                 switchMode={switchMode}
-                t={t}
-                uniqueCategories={uniqueCategories}
-                categoryFilter={categoryFilter}
               />
             ) : (
               <>
-                {currentIndex === filteredQuestions.length ? (
-                  <Modal
-                    filteredQuestions={filteredQuestions}
-                    setShowResult={setShowResult}
-                    isCorrect={isCorrect}
-                    handleReset={handleReset}
+                {correctAnswerCount === -1 ? (
+                  <SelectCategory
+                    switchMode={switchMode}
                     t={t}
-                    playSound={playSound}
+                    uniqueCategories={uniqueCategories}
+                    categoryFilter={categoryFilter}
                   />
                 ) : (
-                  <AnswerBox
-                    answers={filteredQuestions[currentIndex].answer}
-                    step={step}
-                    filteredQuestions={filteredQuestions}
-                    currentIndex={currentIndex}
-                    switchMode={switchMode}
-                    progressBar={progressBar}
-                  />
+                  <>
+                    {currentIndex === filteredQuestions.length ? (
+                      <Modal
+                        filteredQuestions={filteredQuestions}
+                        setShowResult={setShowResult}
+                        isCorrect={isCorrect}
+                        handleReset={handleReset}
+                        t={t}
+                        playSound={playSound}
+                      />
+                    ) : (
+                      <AnswerBox
+                        answers={filteredQuestions[currentIndex].answer}
+                        step={step}
+                        filteredQuestions={filteredQuestions}
+                        currentIndex={currentIndex}
+                        switchMode={switchMode}
+                        progressBar={progressBar}
+                      />
+                    )}
+                  </>
                 )}
               </>
             )}
-          </>
-        )}
-      </div>
+          </div>
+        </>
+      )}
     </>
   );
 }
